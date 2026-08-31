@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register Student</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>Register Student</h1>
+
+
+        <div class="form-box">
+
+            <form
+                action="{{ url_for('add_student') }}"
+                method="POST"
+            >
+
+                <div class="form-group">
+
+                    <label>Student Name:</label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter student name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Roll Number:</label>
+
+                    <input
+                        type="text"
+                        name="roll"
+                        placeholder="Enter roll number"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Department:</label>
+
+                    <input
+                        type="text"
+                        name="department"
+                        placeholder="Enter department"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Register Student
+                </button>
+
+
+                <a
+                    href="{{ url_for('index') }}"
+                    class="cancel-btn"
+                >
+                    Back
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Student</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Edit Student</h1>
+            <p>Update student information</p>
+        </header>
+
+
+        <section class="section">
+
+            <h2>Edit Student Details</h2>
+
+            <form
+                method="POST"
+                action="{{ url_for('edit_student', id=student.id) }}"
+                class="student-form"
+            >
+
+                <input
+                    type="text"
+                    name="name"
+                    value="{{ student.name }}"
+                    placeholder="Student Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="roll_number"
+                    value="{{ student.roll_number }}"
+                    placeholder="Roll Number"
+                    required
+                >
+
+                <input
+                    type="text"
+                    name="department"
+                    value="{{ student.department }}"
+                    placeholder="Department"
+                    required
+                >
+
+                <button type="submit">
+                    Update Student
+                </button>
+
+            </form>
+
+            <br>
+
+            <a
+                href="{{ url_for('index') }}"
+                class="clear-btn"
+            >
+                ← Back to Student List
+            </a>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
